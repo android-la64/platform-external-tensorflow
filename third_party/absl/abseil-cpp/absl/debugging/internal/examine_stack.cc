@@ -194,7 +194,7 @@ void* GetProgramCounter(void* const vuc) {
 #elif defined(__e2k__)
     return reinterpret_cast<void*>(context->uc_mcontext.cr0_hi);
 #elif defined(__loongarch__)
-    return reinterpret_cast<void*>(context->uc_mcontext.__pc);
+    return reinterpret_cast<void*>(context->uc_mcontext.sc_pc);
 #else
 #error "Undefined Architecture."
 #endif
